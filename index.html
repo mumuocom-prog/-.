@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إلى أميرة قلبي "فيد"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Aref+Ruqaa:wght@700&family=Cairo:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0; padding: 0;
+            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+            height: 100vh; display: flex; justify-content: center; align-items: center;
+            overflow: hidden; font-family: 'Cairo', sans-serif; color: #b33939; text-align: center;
+        }
+        .container {
+            width: 85%; max-width: 500px; background: rgba(255, 255, 255, 0.95);
+            padding: 40px 25px; border-radius: 35px; box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+            z-index: 10; border: 2px solid #ffb1b1; display: none; 
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        
+        #page1 { display: block; } 
+
+        h1 { font-family: 'Aref Ruqaa', serif; font-size: 2.3rem; color: #d63031; margin-bottom: 25px; line-height: 1.3; }
+        p { font-size: 1.35rem; line-height: 1.9; color: #333; margin-bottom: 35px; }
+        
+        .btn {
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            color: white; border: none; padding: 15px 45px; font-size: 1.15rem;
+            border-radius: 50px; cursor: pointer; transition: 0.4s; font-weight: bold;
+            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
+        }
+        .btn:hover { transform: scale(1.08); background: linear-gradient(45deg, #ff6b81, #ff4757); }
+        
+        .heart { position: absolute; color: #ff4d4d; font-size: 20px; pointer-events: none; z-index: 1; }
+        .footer-text { color:#ff7675; font-weight:bold; font-size: 0.9rem; margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+    <audio id="bgMusic" loop>
+        <source src="https://files.catbox.moe/y5jsrw.m4a" type="audio/x-m4a">
+        <source src="https://files.catbox.moe/y5jsrw.m4a" type="audio/mpeg">
+    </audio>
+
+    <div id="page1" class="container">
+        <div style="color:#ff7675; font-weight:bold; margin-bottom:15px; letter-spacing: 1px;">From your love..</div>
+        <h1>قبل ما نبدأ.. ❤️</h1>
+        <p>أتمنى دائماً يكون ببالج إني أحبج..<br>وكل كلامي اللي راح تقرينه ميوّفي حقج ولا يلمس جزء من غلاتج.</p>
+        <button class="btn" onclick="startApp()">أكملي يا روحي..</button>
+    </div>
+
+    <div id="page2" class="container">
+        <h1>فيد.. يا أحلى وأحن إنسانة لروحي</h1>
+        <p>صدقيني.. بحياتي كلها ما صافن بشاشة وأفكر بكل كلمة أحجيها مثل هسة، لأن كل حرف طالع من كلبي الج.</p>
+        <button class="btn" onclick="nextPage(3)">اضغطي للتكملة</button>
+    </div>
+
+    <div id="page3" class="container">
+        <h1>اعتذار من القلب.. 💌</h1>
+        <p>أحبج بكل ما تعني الكلمة من معاني.. وآسف للطريقة اللي عاملتج بيها، وآسف لكل لحظة مرت وما كدرت أفهمج بيها .</p>
+        <button class="btn" onclick="nextPage(4)">اضغطي للتكملة</button>
+    </div>
+
+    <div id="page4" class="container">
+        <h1>.. ✨</h1>
+        <p>حياتي كلها متخيلت بوجود إنسانة مثلج.. انتِ فعلاً مميزة لدرجة أحب كل لحظة بحياتي وياج. الدنيا متسوى بدون ضحكتج.</p>
+        <button class="btn" onclick="nextPage(5)">اكملي ياروحي..</button>
+    </div>
+
+    <div id="page5" class="container">
+        <h1> اتمنى تقبلين طريقتي البسيطه للاعتذار! .. </h1>
+        <p>خلافاتنا بالنهاية كلها خلافات، ولو تلاقت الأرواح ذهب العقل.. أتمنى تعرفين شعوري تجاهج  .</p>
+        <h2 style="color: #d63031; font-family: 'Aref Ruqaa'; font-size: 2.2rem;">أحبج جداً ❤️</h2>
+        <div class="footer-text">حبيبج المخلص للابد حسين</div>
+    </div>
+
+    <script>
+        function startApp() {
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(e => console.log("Audio waiting for interaction"));
+            nextPage(2);
+        }
+
+        function nextPage(pageNum) {
+            document.querySelectorAll('.container').forEach(div => {
+                div.style.display = 'none';
+            });
+            const nextPageDiv = document.getElementById('page' + pageNum);
+            nextPageDiv.style.display = 'block';
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = (Math.random() > 0.5) ? '❤️' : '💖';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.opacity = Math.random();
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.body.appendChild(heart);
+            
+            let position = 100;
+            let speed = Math.random() * 2 + 1.2;
+            let interval = setInterval(() => {
+                position -= speed;
+                heart.style.top = position + 'vh';
+                if (position < -10) { 
+                    clearInterval(interval); 
+                    heart.remove(); 
+                }
+            }, 20);
+        }
+        setInterval(createHeart, 250);
+    </script>
+</body>
+</html>
