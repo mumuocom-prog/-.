@@ -1,40 +1,127 @@
-<!DOCTYPE html>
+<!<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إلى أميرة قلبي "فيد"</title>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Aref+Ruqaa:wght@700&family=Cairo:wght@600&display=swap" rel="stylesheet">
+    <title>إلى حبيبة قلبي "خديجة"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Aref+Ruqaa:wght@700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
         body {
-            margin: 0; padding: 0;
-            background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
-            height: 100vh; display: flex; justify-content: center; align-items: center;
-            overflow: hidden; font-family: 'Cairo', sans-serif; color: #b33939; text-align: center;
+            margin: 0; 
+            padding: 0;
+            /* خلفية متحركة بنعومة - ألوان رومانسية فخمة */
+            background: linear-gradient(-45deg, #ffe5e5, #ffb3c6, #ffcbf2, #f8edeb);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            height: 100vh; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            overflow: hidden; 
+            font-family: 'Cairo', sans-serif; 
+            text-align: center;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* البطاقة: ثابتة، فخمة، وواضحة جداً */
         .container {
-            width: 85%; max-width: 500px; background: rgba(255, 255, 255, 0.95);
-            padding: 40px 25px; border-radius: 35px; box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-            z-index: 10; border: 2px solid #ffb1b1; display: none; 
-            animation: fadeIn 1s ease-out;
+            width: 85%; 
+            max-width: 500px; 
+            background: #ffffff;
+            padding: 45px 30px; 
+            border-radius: 25px; 
+            /* ظل ناعم وراقي */
+            box-shadow: 0 20px 50px rgba(200, 100, 120, 0.15);
+            /* إطار خفيف بلون وردي ذهبي */
+            border: 1px solid rgba(255, 180, 200, 0.6);
+            z-index: 10; 
+            display: none; 
+            /* انتقال ناعم جداً بدون اهتزاز */
+            animation: fadeInSmooth 0.8s ease forwards;
         }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
-        
+
+        @keyframes fadeInSmooth { 
+            from { opacity: 0; transform: scale(0.98); } 
+            to { opacity: 1; transform: scale(1); } 
+        }
+
         #page1 { display: block; } 
 
-        h1 { font-family: 'Aref Ruqaa', serif; font-size: 2.3rem; color: #d63031; margin-bottom: 25px; line-height: 1.3; }
-        p { font-size: 1.35rem; line-height: 1.9; color: #333; margin-bottom: 35px; }
-        
-        .btn {
-            background: linear-gradient(45deg, #ff4757, #ff6b81);
-            color: white; border: none; padding: 15px 45px; font-size: 1.15rem;
-            border-radius: 50px; cursor: pointer; transition: 0.4s; font-weight: bold;
-            box-shadow: 0 8px 20px rgba(255, 71, 87, 0.3);
+        h1 { 
+            font-family: 'Aref Ruqaa', serif; 
+            font-size: 2.4rem; 
+            color: #d63031; 
+            margin-bottom: 20px; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
         }
-        .btn:hover { transform: scale(1.08); background: linear-gradient(45deg, #ff6b81, #ff4757); }
         
-        .heart { position: absolute; color: #ff4d4d; font-size: 20px; pointer-events: none; z-index: 1; }
-        .footer-text { color:#ff7675; font-weight:bold; font-size: 0.9rem; margin-top: 15px; }
+        p { 
+            font-size: 1.35rem; 
+            line-height: 1.8; 
+            color: #4a4a4a; 
+            margin-bottom: 35px; 
+            font-weight: 600;
+        }
+
+        /* الزر: تصميم راقي ومريح */
+        .btn {
+            background: linear-gradient(to right, #ff758c 0%, #ff7eb3 100%);
+            color: white; 
+            border: none; 
+            padding: 14px 45px; 
+            font-size: 1.15rem;
+            border-radius: 50px; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 8px 20px rgba(255, 117, 140, 0.3);
+        }
+        
+        .btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 10px 25px rgba(255, 117, 140, 0.4); 
+        }
+
+        /* القلوب: حركة سلسة 100% بدون تعليق */
+        .heart { 
+            position: absolute; 
+            bottom: -5vh; /* تبدأ من تحت الشاشة */
+            pointer-events: none; 
+            z-index: 1; 
+            animation: floatUp linear forwards;
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-110vh) rotate(20deg);
+            }
+        }
+
+        /* لمسات ترتيب النصوص */
+        .subtitle {
+            color: #e84393; 
+            font-weight: 700; 
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        .signature {
+            color: #d63031; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -45,74 +132,78 @@
     </audio>
 
     <div id="page1" class="container">
-        <div style="color:#ff7675; font-weight:bold; margin-bottom:15px; letter-spacing: 1px;">رسالة الى حبيبة قلبي فيد..</div>
-        <h1>قبل ما نبد.. ❤️</h1>
-        <p>أتمنى دائماً يكون ببالج إني أحبج..<br>وكل كلامي اللي راح تقرينه ميوّفي حقج ولا يعبر عن كامل مشاعري تجاهج.</p>
-        <button class="btn" onclick="startApp()">أكملي يا روحي..</button>
+        <div class="subtitle">From your love..</div>
+        <h1>قبل ما نبدأ..</h1>
+        <p>اتمنى دائماً يكون ببالج أحبج وكل كلامي ميوفي حقج</p>
+        <button class="btn" onclick="startApp()">أكمل..</button>
     </div>
 
     <div id="page2" class="container">
-        <h1>فيد.. يا أحلى وأحن إنسانة لروحي</h1>
-        <p>صدكيني.. بحياتي كلها ما صافن بشاشة وأفكر بكل كلمة أحجيها مثل هسة، لأن كل حرف طالع من كلبي الج.</p>
-        <button class="btn" onclick="nextPage(3)">اضغطي للتكملة</button>
+        <h1>إلى خديجة حبيبة عمري</h1>
+        <p>يا احلا واحن انسانه اشوفها بكل حياتي الصدفه الي نورت عمري.. كل عام وانتي بخير يا روحي</p>
+        <button class="btn" onclick="nextPage(3)">اضغط للتكملة</button>
     </div>
 
     <div id="page3" class="container">
-        <h1>اعتذار من القلب.. 💌</h1>
-        <p>أحبج بكل ما تعني الكلمة من معاني.. وآسف للطريقة اللي عاملتج بيها، وآسف لكل لحظة مرت وما كدرت أفهمج بيها .</p>
-        <button class="btn" onclick="nextPage(4)">اضغطي للتكملة</button>
+        <p>الناس كلها تفرح بالعيد بس اني افرح من اشوفج بخير، اريد دائماً يكون ببالج ابداً ماتغير شعوري تجاهج ولا الطريقة الي تخليني اشعر بيها</p>
+        <button class="btn" onclick="nextPage(4)">اضغط للتكملة</button>
     </div>
 
     <div id="page4" class="container">
-        <h1>.. ✨</h1>
-        <p>حياتي كلها متخيلت بوجود إنسانة مثلج.. انتِ فعلاً مميزة لدرجة أحب كل لحظة بحياتي وياج. الدنيا متسوى بدون ضحكتج.</p>
-        <button class="btn" onclick="nextPage(5)">اكملي ياروحي..</button>
-    </div>
-
-    <div id="page5" class="container">
-        <h1> اتمنى تقبلين طريقتي البسيطه للاعتذار! .. </h1>
-        <p>خلافاتنا بالنهاية كلها خلافات، ولو تلاقت الأرواح ذهب العقل.. أتمنى تعرفين شعوري تجاهج  .</p>
-        <h2 style="color: #d63031; font-family: 'Aref Ruqaa'; font-size: 2.2rem;">أحبج جداً ❤️</h2>
-        <div class="footer-text">حبيبج المخلص للابد حسين</div>
+        <p>اتمنالج الخير والسعادة وطولة العمر يا أحن وأحلى إنسان أشوفه بحياتي.. جداً ممتن لوجودج.. لان خديجة!!!! حياتي محلوة بدونج</p>
+        <h2 style="color: #d63031; font-family: 'Aref Ruqaa', serif; font-size: 2.8rem; margin: 15px 0;">أحبج جداً ❤️</h2>
+        <div class="signature">حبيبج المخلص للابد يوسف.</div>
     </div>
 
     <script>
         function startApp() {
             const audio = document.getElementById('bgMusic');
-            audio.play().catch(e => console.log("Audio waiting for interaction"));
+            audio.play().catch(e => {
+                console.log("Play blocked, but continuing to next page.");
+            });
             nextPage(2);
         }
 
         function nextPage(pageNum) {
+            // إخفاء كل الصفحات
             document.querySelectorAll('.container').forEach(div => {
                 div.style.display = 'none';
+                div.style.animation = 'none'; // إعادة تعيين الأنيميشن
             });
-            const nextPageDiv = document.getElementById('page' + pageNum);
-            nextPageDiv.style.display = 'block';
+            
+            // إظهار الصفحة المطلوبة مع تأثير النعومة
+            const nextPageElem = document.getElementById('page' + pageNum);
+            nextPageElem.style.display = 'block';
+            // إجبار المتصفح على إعادة رسم العنصر لتشغيل الأنيميشن من جديد
+            void nextPageElem.offsetWidth; 
+            nextPageElem.style.animation = 'fadeInSmooth 0.6s ease forwards';
         }
 
+        // دالة إنشاء القلوب بشكل احترافي وبدون Lag
         function createHeart() {
             const heart = document.createElement('div');
             heart.classList.add('heart');
-            heart.innerHTML = (Math.random() > 0.5) ? '❤️' : '💖';
+            heart.innerHTML = '❤️';
+            
+            // أحجام وأماكن عشوائية
             heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.top = '100vh';
-            heart.style.opacity = Math.random();
-            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.fontSize = (Math.random() * 15 + 12) + 'px';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            
+            // سرعة متغيرة لكل قلب (بين 4 إلى 7 ثواني)
+            const duration = Math.random() * 3 + 4;
+            heart.style.animationDuration = duration + 's';
+            
             document.body.appendChild(heart);
             
-            let position = 100;
-            let speed = Math.random() * 2 + 1.2;
-            let interval = setInterval(() => {
-                position -= speed;
-                heart.style.top = position + 'vh';
-                if (position < -10) { 
-                    clearInterval(interval); 
-                    heart.remove(); 
-                }
-            }, 20);
+            // مسح القلب من الكود بعد ما يختفي حتى ما يصير ثقل على المتصفح
+            setTimeout(() => {
+                heart.remove();
+            }, duration * 1000);
         }
-        setInterval(createHeart, 250);
+
+        // توليد قلب كل 350 جزء من الثانية (معدل ممتاز ومريح للعين)
+        setInterval(createHeart, 350); 
     </script>
 </body>
 </html>
